@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="map.css">
+    <title>Funadhoo Adresses</title>
+</head>
+<body>
+  <div class = "search-bar">
+   <form>
+       <input type="text" list="gethah" id="homeName" placeholder="Type the Address here" required>
+       <datalist id="gethah">
+           <option value="Nooraleege"></option>
+           <option value="Moonlight"></option>
+           <option value="Vafaa"></option>
+       </datalist>
+   </form>
+   </div>
+   
+    <div id="map"></div>
+    <script src="drawMark.js">
+    </script>
+    <script src="geygeList.js">
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7avTUM72TMTMYg6IQGnKI4Sa7tY92t2E&callback=initMap">
+    </script>
+</body>
+</html>
