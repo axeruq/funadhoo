@@ -120,7 +120,7 @@ uLocation.addEventListener("click", function() {
     var marker = new google.maps.Marker({position: cPos, map: map});
     posArray.push(marker);
 
-    map.setZoom(14);
+    map.setZoom(16);
 
     if (posArray.length > 1) {
       posArray[0].setMap(null);
