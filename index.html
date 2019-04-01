@@ -1,30 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="map.css">
-    <script src="geygeList.js">
-    </script>
-    <title>Funadhoo Adresses</title>
-</head>
-<body>
-  <div class = "search-bar">
-   <form>
-       <input type="text" list="gethah" id="homeName" placeholder="Type the Address here" required>
-       <datalist id="gethah">
-           <option value="Nooraleege"></option>
-           <option value="Moonlight"></option>
-           <option value="Vafaa"></option>
-       </datalist>
-   </form>
-   </div>
-   
+    <script src="geygelist.js"></script>
+    <title>Funadhoo Address Finder</title>
+  </head>
+  <body>
+    <div class="header">
+      <form>
+        <input type="text" id="geygeNan" name="search" placeholder="Enter Address here">
+        <button type="button" id="hodhaa" name="Search">Search</button>
+      </form>
+      <div class="btns">
+        <button type="button" name="uLocation" id="uLocation">Show My Location</button>
+        <button type="button" name="hideMarker" id="hideMarker">Hide Marker</button>
+      </div>
+    </div>
+    <div id="content">
+
+    </div>
     <div id="map"></div>
-    <script src="map.js">
-    </script>
+    <script src="map.js"></script>
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB7avTUM72TMTMYg6IQGnKI4Sa7tY92t2E&callback=initMap">
-    </script>
-</body>
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpPgb8BzmLFsJ68_hKguQA3uayjk7Ae8I&callback=initMap"></script>
+  </body>
 </html>
