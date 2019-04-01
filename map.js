@@ -47,8 +47,6 @@ sButton.addEventListener("click", function() {
   }
 
   if (geArray.length > 0) {
-    map.setZoom(14);
-    map.setCenter(geMarker.getPosition());
     geArray[0].setMap(null);
     geArray.shift();
   }
@@ -61,7 +59,7 @@ sButton.addEventListener("click", function() {
     geArray.push(marker);
 
     geMarker = marker;
-    map.setZoom(14);
+    map.setZoom(18);
     map.setCenter(geMarker.getPosition());
 
 
@@ -85,8 +83,6 @@ form.addEventListener("submit", function(e) {
   }
 
   if (geArray.length > 0) {
-    map.setZoom(14);
-    map.setCenter(geMarker.getPosition());
     geArray[0].setMap(null);
     geArray.shift();
   }
@@ -99,7 +95,7 @@ form.addEventListener("submit", function(e) {
     geArray.push(marker);
 
     geMarker = marker;
-    map.setZoom(14);
+    map.setZoom(18);
     map.setCenter(geMarker.getPosition());
 
 
