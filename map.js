@@ -135,7 +135,7 @@ hideMarker.addEventListener("click", function() {
   if (markerHidden === false) {
     geArray[0].setMap(null);
     markerHidden = true;
-    map.setZoom(14);
+    map.setZoom(16);
     hideMarker.innerHTML = "Show Marker";
   } else {
     geArray[0].setMap(map);
