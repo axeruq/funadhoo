@@ -102,3 +102,28 @@ button:hover {
   bottom: 0;
   left: 5px;
 }
+
+.pN, .pR, .pNo, .pBNo {
+  color: #FF9E67;
+  font-size: 17px;
+}
+
+.pN::before {
+  color: #47AFFF;
+  content: "House Name: ";
+}
+
+.pR::before  {
+  color: #47AFFF;
+  content: "Road: ";
+}
+
+.pNo::before  {
+  color: #47AFFF;
+  content: "House Number: ";
+}
+
+.pBNo::before  {
+  color: #47AFFF;
+  content: "Block Number: ";
+}
