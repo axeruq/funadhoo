@@ -9,7 +9,7 @@ body {
 #map {
   margin: 8px;
   width: 96vw;
-  height: 500px;
+  height: 550px;
 }
 
 .header {
@@ -46,7 +46,7 @@ button:hover {
 
 .error {
   font-family: 'Concert One', cursive;
-  font-size: 20px;
+  font-size: 16px;
   padding: 20px;
   border-radius: 20px;
   z-index: 10;
@@ -66,7 +66,7 @@ button:hover {
 .error button {
   position: absolute;
   right: 30px;
-  bottom: 15px;
+  bottom: 10px;
 }
 
 
