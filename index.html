@@ -3,8 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Concert+One|Nunito" rel="stylesheet">
     <link rel="stylesheet" href="map.css">
-    <script src="geygeList.js"></script>
+    <script src="geygelist.js"></script>
     <title>Funadhoo Address Finder</title>
   </head>
   <body>
@@ -18,7 +19,12 @@
         <button type="button" name="hideMarker" id="hideMarker">Hide Marker</button>
       </div>
     </div>
-    <div id="content">
+    <div id="content" class="hide">
+      <p>OOPS! We couldn't Locate the House. Please check if the address you entered was correct. If you think it was an ERROR, please contact us. Thank You.</p>
+      <button type="button" name="OK" id="okay">OK</button>
+    </div>
+    <img src="img/tup.png" alt="Toggle" id="toggle" class="toggle-up" width="20px">
+    <div id="infoTag" class="hide">
 
     </div>
     <div id="map"></div>
