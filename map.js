@@ -17,6 +17,7 @@ var posArray = [];
 
 var markerHidden = false;
 var uMarkerHidden = false;
+var geInfoSet = false;
 
 function initMap() {
   getLocation();
@@ -61,15 +62,24 @@ function getAddress() {
         let gNo = geygeList[i].houseNo;
         let gBlock = geygeList[i].blockNo;
 
+        if (geInfoSet == true) {
+          for(let i = 0; i < 4; i++) {
+            infoContent.removeChild(infoContent.childNodes[0]);
+          }
+        }
         let infoBarN = document.createElement("p");
+        infoBarN.classList.add("pN");
         let infoBarR = document.createElement("p");
+        infoBarR.classList.add("pR");
         let infoBarNo = document.createElement("p");
+        infoBarNo.classList.add("pNo")
         let infoBarBNo = document.createElement("p");
+        infoBarBNo.classList.add("pBNo");
 
-        let textBarN = document.createTextNode(`House Name: ${title}`);
-        let textBarR = document.createTextNode(`Road: ${gRoad}`);
-        let textBarNo = document.createTextNode(`House Number: ${gNo}`);
-        let textBarBNo = document.createTextNode(`Block Number: ${gBlock}`);
+        let textBarN = document.createTextNode(` ${title}`);
+        let textBarR = document.createTextNode(` ${gRoad}`);
+        let textBarNo = document.createTextNode(` ${gNo}`);
+        let textBarBNo = document.createTextNode(` ${gBlock}`);
 
         infoBarN.appendChild(textBarN);
         infoBarR.appendChild(textBarR);
@@ -80,6 +90,8 @@ function getAddress() {
         infoContent.appendChild(infoBarR);
         infoContent.appendChild(infoBarNo);
         infoContent.appendChild(infoBarBNo);
+
+        geInfoSet = true;
 
         geArray.push(marker);
 
