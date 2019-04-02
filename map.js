@@ -76,10 +76,10 @@ function getAddress() {
         let infoBarBNo = document.createElement("p");
         infoBarBNo.classList.add("pBNo");
 
-        let textBarN = document.createTextNode(` ${title}`);
-        let textBarR = document.createTextNode(` ${gRoad}`);
-        let textBarNo = document.createTextNode(` ${gNo}`);
-        let textBarBNo = document.createTextNode(` ${gBlock}`);
+        let textBarN = document.createTextNode(title);
+        let textBarR = document.createTextNode(gRoad);
+        let textBarNo = document.createTextNode(gNo);
+        let textBarBNo = document.createTextNode(gBlock);
 
         infoBarN.appendChild(textBarN);
         infoBarR.appendChild(textBarR);
