@@ -1,22 +1,104 @@
 body {
-  margin: 0;
+  font-family: 'Nunito', sans-serif;
+  color: #C9EFBB;
+  background: #AADAFF;
+  margin: auto;
   padding: 0;
 }
 
 #map {
-  margin: 4px;
+  margin: 8px;
   width: 96vw;
   height: 500px;
 }
 
-.search-bar {
-    position: fixed;
-    top: 50px;
-    left: 35px;
-    z-index: 3;
+.header {
+  padding: 10px;
 }
 
-.search-bar form input {
-    width: 192px;
-    height: 30px;
+#hodhaa {
+  width: auto;
+  height: auto;
+  font-size: 17px;
+  margin: 4px;
+}
+
+#geygeNan {
+  text-align: center;
+  padding: 4px;
+  margin: 4px;
+  color: #FF9E67;
+  border: 2px solid #FF9E67;
+  border-radius: 10px;
+  height: 20px;
+}
+
+button {
+  font-size: 16px;
+  font-family: 'Nunito', sans-serif;
+  padding: 5px;
+  color: #FF9E67;
+}
+
+button:hover {
+  border: 2px solid #FF9E67;
+}
+
+.error {
+  font-family: 'Concert One', cursive;
+  font-size: 20px;
+  padding: 20px;
+  border-radius: 20px;
+  z-index: 10;
+  position: fixed;
+  top: 20%;
+  left: 25%;
+  color: #FF9E67;
+  width: 200px;
+  height: auto;
+  background: #fff;
+}
+
+.error p {
+  padding: 10px;
+}
+
+.error button {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+}
+
+
+.hide {
+  display: none;
+}
+
+.toggle-up {
+  z-index: 9;
+  cursor: pointer;
+  position: fixed;
+  bottom: 0;
+  left: 100px;
+}
+
+.toggle-down {
+  z-index: 9;
+  cursor: pointer;
+  position: fixed;
+  bottom: 210px;
+  left: 100px;
+}
+
+.info-bar {
+  font-family: 'Nunito', sans-serif;
+  color: #FF9E67;
+  z-index: 8;
+  background: #fff;
+  padding: 20px;
+  width: 200px;
+  height: 200px;
+  position: fixed;
+  bottom: 0;
+  left: 5px;
 }
