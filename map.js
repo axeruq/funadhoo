@@ -7,11 +7,13 @@ var errorMsg = document.querySelector("#content");
 var okayBtn = document.querySelector("#okay");
 var toggleBtn = document.querySelector("#toggle");
 var infoContent = document.querySelector("#infoTag");
+var list = document.querySelector("#gethah");
 
 var funadhoo = {lat: 6.1487733, lng: 73.2882523};
 
 var cGe, cPos, map, geMark, popup, Popup, title;
 
+var listArray = [];
 var geArray = [];
 var posArray = [];
 
@@ -43,6 +45,15 @@ function showPosition(position) {
 }
 
 function getAddress() {
+    
+    if (listArray.length !==0) {
+        for ( let k = 0; k < listArray.length; k++) {
+            list.removeChild(list.childNodes[0]);
+        }
+    }
+    
+    listArray = [];
+    
   if (geArray.length > 0) {
     geArray[0].setMap(null);
     geArray.shift();
@@ -184,4 +195,30 @@ toggleBtn.addEventListener("click", function(){
     toggleBtn.classList.add("toggle-up");
     toggleBtn.setAttribute("src", "img/tup.png")
   }
+});
+
+input.addEventListener("keydown", function() {
+    
+    if (listArray.length !==0) {
+        for ( let k = 0; k < listArray.length; k++) {
+            list.removeChild(list.childNodes[0]);
+        }
+    }
+    
+    listArray = [];
+    
+    if(input.value.length > 1) {
+         for(let i = 0; i < geygeList.length; i++) {
+            if(geygeList[i].name.toUpperCase().indexOf(input.value.toUpperCase()) > -1) {
+            listArray.push(geygeList[i].name);
+            }
+        }
+    }
+        for(let j = 0; j < listArray.length; j++) {
+            let optionList = document.createElement("option");
+            let optionText = document.createTextNode(listArray[j]);
+            optionList.appendChild(optionText);
+            list.appendChild(optionList);
+    }
+    
 });
