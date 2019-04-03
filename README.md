@@ -2,7 +2,7 @@
 Tool to search Funadhoo Houses by name and Treasures :)
 
 Inspired by so many failed attempts in giving direction to strangers, I (uMn Noor), with the help of few friends 
-(Athoof Athif [Cyber Hacker], Hassan Maishan [Myittey], Ibrahim Asraq and Ahmed Mohamed [Jenny]) set out on a quest to change the world.
+(Mohamed Dharis [dharisd], Athoof Athif [Cyber Hacker], Hassan Maishan [Myittey], Ibrahim Asraq and Ahmed Mohamed [Jenny]) set out on a quest to change the world.
 
 Anyone who wants to find an Address in the island, Funadhoo, feel free to use this tool.
 
