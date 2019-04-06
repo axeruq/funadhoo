@@ -3,32 +3,35 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Concert+One|Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Varela+Round" rel="stylesheet">
     <link rel="stylesheet" href="map.css">
     <script src="geygeList.js"></script>
-    <title>Funadhoo Address Finder</title>
+    <title>FUNADHOO ADDRESS SEARCH</title>
   </head>
   <body>
-    <div class="header">
-      <form>
-        <input type="text" id="geygeNan" name="search" list="gethah" placeholder="Enter Address here">
-        <button type="button" id="hodhaa" name="Search">Search</button>
+    <div class="search-bar">
+      <img src="img/search.png" alt="search-icon" id="searchImg" class="initPos">
+      <img src="img/userPosHide.png" alt="User Location" id="userPosImg" class="">
+      <img src="img/housePos.png" alt="House Location" id="housePosImg" class="">
+      <form id="form" class="hidden">
+        <input type="text" name="address" id="input" class="input" list="gethah" placeholder="Type Address Here">
+        <button type="button" name="Search" id="searchBtn">Search</button>
         <datalist id="gethah"></datalist>
       </form>
-      <div class="btns">
-        <button type="button" name="uLocation" id="uLocation">Show My Location</button>
-        <button type="button" name="hideMarker" id="hideMarker">Hide Marker</button>
-      </div>
     </div>
-    <div id="content" class="hide">
-      <p>OOPS! We couldn't Locate the House. Please check if the address you entered was correct. If you think it was an ERROR, please contact us. Thank You.</p>
+    <div id="map"><p>OOPS! SOMETHING WENT WRONG</p></div>
+    <div class="hidden" id="errorMsg">
+      <p>OOPS! We couldn't Locate the House. Please check if the address you entered was correct. If you think it was an ERROR, please <a href="contact.html">Contact Us! </a>Thank You.</p>
       <button type="button" name="OK" id="okay">OK</button>
     </div>
-    <img src="img/tup.png" alt="Toggle" id="toggle" class="toggle-up" width="20px">
-    <div id="infoTag" class="hide"></div>
-    <div id="map"></div>
-    <script src="map.js"></script>
-    <script async defer
+    <div id="infoContainer"class="hidden">
+      <img src="img/house.png" alt="House" width="50px">
+      <div class="info" id="info"></div>
+    </div>
+      <img src="img/toggleUp.png" alt="Toggle" id="toggleImg" class="toggleUp" width="45px">
+      <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpPgb8BzmLFsJ68_hKguQA3uayjk7Ae8I&callback=initMap"></script>
+    <script src="dom.js"></script>
+    <script src="map.js"></script>
   </body>
 </html>
