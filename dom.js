@@ -142,5 +142,5 @@ form.addEventListener("submit", function(e) {
 
 okayBtn.addEventListener("click", function() {
   errorMsg.classList.remove("error");
-  errorMsg.classList.add("hide");
+  errorMsg.classList.add("hidden");
 });
