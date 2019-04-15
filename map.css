@@ -1,211 +1,67 @@
-body {
-  font-family: 'Dosis', sans-serif;
-  color: #070707;
-  margin: auto;
-  padding: 0;
-  text-align: center;
-}
-
-.search-bar {
-  z-index: 10;
-  margin: auto;
-  background: rgba(0,126,167,0.0);
-  width: 100vw;
-  height: 20vh;
-  overflow: auto;
-  position: fixed;
-  top: 0;
-}
-
-button {
-  font-family: 'Dosis', sans-serif;
-  text-align: center;
-  color: #FF6B35;
-  width: auto;
-  height: auto;
-  font-weight: bold;
-  font-size: 20px;
-}
-
-button:hover {
-  border: 2px solid #FF6B35;
-}
-
-#searchImg {
-  display: inline-block;
-  position: absolute;
-  margin: 4px;
-}
-
-#userPosImg {
-  display: inline-block;
-  position: absolute;
-  margin: 4px;
-  top: 25%;
-  left: 100px;
-}
-
-#housePosImg {
-  display: inline-block;
-  position: absolute;
-  margin: 4px;
-  top: 25%;
-  left: 165px;
-}
-
-.initPos {
-  top: 25%;
-  left: 35px;
-}
-
-.clickPos {
-  top: 25%;
-  left: 15px;
-}
-
-.input {
-  font-family: 'Dosis', sans-serif;
-  background: rgba(251,252,255,0.8);
-  color: #FF6B35;
-  font-weight: bold;
-  font-size: 20px;
-  text-align: center;
-  position: absolute;
-  display: inline-block;
-  border: 2px solid #FF6B35;
-  border-radius: 200px;
-  top: 35%;
-  left: 90px;
-  width: 50vw;
-  height: 30px;
-}
-
-.search-bar button {
-  position: absolute;
-  display: inline-block;
-  top: 38%;
-  right: 3%;
-  width: auto;
-  height: 30px;
-}
-
-form {
-  margin: auto;
-}
-
 #map {
-  text-align: center;
-  color: #FF6B35;
-  background: #007EA7;
-  margin: auto;
-  width: 100vw;
   height: 100vh;
 }
 
-#map p {
-  margin: auto;
-  width: 150px;
-  height: auto;
-  padding: 200px 0px 200px 0px;
-}
+@media (min-width: 768px) {
+  .info-bar {
+  padding-top: 75px;
+  padding-left: 10px;
+  padding-bottom: 0px;
 
-.info-bar {
-  position: fixed;
-  bottom: 0;
-  width: 100vw;
-  height: 30vh;
-  background: #FBFCFF;
-}
+} }
 
-.info-bar img {
-  position: absolute;
-  left: 5%;
-  top: 20%;
-}
+@media (max-width: 767.98px) {
+  .info-bar {
+  padding-top: 0px;
+  padding-left: 10px;
+  padding-bottom: 0px;
 
-.info {
-  /* border: 2px solid red; */
-  text-align: left;
-  margin: auto;
-  padding: 25px;
-  width: 80%;
-  height: 30vh;
-  position: absolute;
-  top: 0;
-  left: 20%;
-}
-
-.toggleUp {
-  display: inline-block;
-  z-index: 10;
-  position: fixed;
-  bottom: 0;
-  left: 50vw;
-}
-
-.toggleDown {
-  display: inline-block;
-  z-index: 10;
-  position: fixed;
-  bottom: 25vh;
-  left: 50vw;
-}
-
-.pName, .pRoad, .pBlock, .pHouse {
-  font-family: 'Varela Round', sans-serif;
-  color: #FF6B35;
-}
-
-.pName::before {
-  color: #007EA7;
-  content: "House Name: ";
-}
-
-.pRoad::before {
-  color: #007EA7;
-  content: "Road: ";
-}
-
-.pBlock::before {
-  color: #007EA7;
-  content: "Block NO: ";
-}
-
-.pHouse::before {
-  color: #007EA7;
-  content: "House NO: ";
-}
-
-.error {
-  font-family: 'Varela Round', sans-serif;
-  font-size: 16px;
-  padding: 20px;
-  border-radius: 20px;
-  z-index: 9;
-  position: fixed;
-  top: 40%;
-  left: 10%;
-  color: #FF6B35;
-  width: 250px;
-  height: auto;
-  background: #FBFCFF;
-}
-
-.error p {
-  line-height: 25px;
-  padding: 10px;
-}
-
-.error button {
-  position: absolute;
-  right: 30px;
-  bottom: 10px;
-}
+} }
 
 .hidden {
   display: none;
 }
 
-.img-hidden {
-  visibility: hidden;
+.error {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(52,46,55,0.5);
+}
+
+.error-msg {
+  margin-top: 100px;
+}
+
+#userPosImg, #housePosImg {
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.pName, .pRoad, .pBlock, .pHouse {
+  font-weight: bold;
+  color: #FF6B35;
+}
+
+.pName::before {
+  font-weight: normal;
+  color: #007EA7;
+  content: "House Name: ";
+}
+
+.pRoad::before {
+  font-weight: normal;
+  color: #007EA7;
+  content: "Road: ";
+}
+
+.pBlock::before {
+  font-weight: normal;
+  color: #007EA7;
+  content: "Block NO: ";
+}
+
+.pHouse::before {
+  font-weight: normal;
+  color: #007EA7;
+  content: "House NO: ";
 }

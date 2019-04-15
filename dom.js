@@ -1,77 +1,62 @@
-var form = document.querySelector("form");
-var searchImg = document.querySelector("#searchImg");
-var input = document.querySelector("#input");
-var searchBtn = document.querySelector("#searchBtn");
-var infoContainer = document.querySelector("#infoContainer");
-var infoBar = document.querySelector("#info");
-var toggleImg = document.querySelector("#toggleImg");
-var userPosImg = document.querySelector("#userPosImg");
-var housePosImg = document.querySelector("#housePosImg");
+var searchBtn = document.querySelector("#find");
+var form = document.querySelector("#form");
+var list = document.querySelector("#gethah");
 var errorMsg = document.querySelector("#errorMsg");
 var okayBtn = document.querySelector("#okay");
-var list = document.querySelector("#gethah");
+var userPosImg = document.querySelector("#userPosImg");
+var housePosImg = document.querySelector("#housePosImg");
+var infoBar = document.querySelector("#infoBar");
+var infoHeader = document.querySelector("#infoHeader");
 
-var toggle = false;
-var searchClicked = false;
-var locationHide = false;
 var houseLocationHide = false;
+var locationHide = false;
 var geInfoSet = false;
-var markerHidden = false;
-var uMarkerHidden = false;
-var matchFound = false;
-var listArray = [];
 
-searchImg.addEventListener("click", function() {
-  if(searchClicked == false) {
-    form.classList.remove("hidden");
-    searchImg.classList.remove("initPos");
-    searchImg.classList.add("clickPos");
-    userPosImg.classList.add("img-hidden");
-    housePosImg.classList.add("img-hidden");
-    searchClicked = true;
-  } else {
-    form.classList.add("hidden");
-    searchImg.classList.remove("clickPos");
-    searchImg.classList.add("initPos");
-    userPosImg.classList.remove("img-hidden");
-    housePosImg.classList.remove("img-hidden");
-    searchClicked = false;
-  }
+searchBtn.addEventListener("click", function() {
+  getAddress();
 });
 
-toggleImg.addEventListener("click", function() {
-  if(toggle == false) {
-    infoContainer.classList.remove("hidden");
-    infoContainer.classList.add("info-bar");
-    toggleImg.classList.remove("toggleUp");
-    toggleImg.classList.add("toggleDown");
-    toggleImg.setAttribute("src", "img/toggleDown.png");
-    toggle = true;
-  } else {
-    infoContainer.classList.remove("info-bar");
-    infoContainer.classList.add("hidden");
-    toggleImg.classList.remove("toggleDown");
-    toggleImg.classList.add("toggleUp");
-    toggleImg.setAttribute("src", "img/toggleUp.png");
-    toggle = false;
-  }
+form.addEventListener("submit", function(e) {
+  e.preventDefault();
+  getAddress();
+});
+
+function optionListSetter() {
+    for(let i =0; i < geygeList.length; i++) {
+        if(geygeList[i].name !== "") {
+            let listOption = document.createElement("option");
+            let listText = document.createTextNode(geygeList[i].name);
+            listOption.appendChild(listText);
+            list.appendChild(listOption);
+        } else {
+            continue;
+        }
+    }
+}
+
+optionListSetter();
+
+function errorMsgDisplay() {
+  errorMsg.classList.remove("hidden");
+  errorMsg.classList.add("error");
+}
+
+okayBtn.addEventListener("click", function() {
+  errorMsg.classList.remove("error");
+  errorMsg.classList.add("hidden");
 });
 
 housePosImg.addEventListener("click", function() {
   if (houseLocationHide === false) {
     geArray[0].setMap(null);
-    housePosImg.setAttribute("src", "img/housePosHide.png");
+    housePosImg.setAttribute("src", "img/house.png");
     houseLocationHide = true;
     map.setZoom(16);
     } else {
-    geArray[0].setMap(map);
-    if(matchFound == true) {
-      housePosImg.setAttribute("src", "img/housePosFound.png");
-    } else {
-      housePosImg.setAttribute("src", "img/housePos.png");
+      geArray[0].setMap(map);
+      housePosImg.setAttribute("src", "img/houseActive.png");
+      houseLocationHide = false;
     }
-    houseLocationHide = false;
-  }
 });
 
 userPosImg.addEventListener("click", function() {
@@ -80,11 +65,15 @@ userPosImg.addEventListener("click", function() {
       for(let i = 0; i < posArray.length; i++) {
         posArray[i].setMap(null);
       }
-    userPosImg.setAttribute("src", "img/userPosHide.png");
+    userPosImg.setAttribute("src", "img/location.png");
     locationHide = false;
   } else {
     getLocation();
-    var marker = new google.maps.Marker({position: cPos, map: map, icon: userIcon, animation: google.maps.Animation.DROP});
+    var marker = new google.maps.Marker({
+      position: cPos,
+      map: map,
+      icon: userIcon,
+      animation: google.maps.Animation.DROP});
     posArray.push(marker);
 
     map.setZoom(14);
@@ -93,7 +82,7 @@ userPosImg.addEventListener("click", function() {
       posArray[0].setMap(null);
       posArray.shift();
     }
-    userPosImg.setAttribute("src", "img/userPos.png");
+    userPosImg.setAttribute("src", "img/locationActive.png");
     locationHide = true;
   }
 });
@@ -106,12 +95,18 @@ function geInfoSetter() {
   }
   let infoBarN = document.createElement("p");
   infoBarN.classList.add("pName");
+  infoBarN.classList.add("list-group-item");
+  infoBarN.classList.add("mt-4");
   let infoBarR = document.createElement("p");
   infoBarR.classList.add("pRoad");
+  infoBarR.classList.add("list-group-item");
   let infoBarNo = document.createElement("p");
   infoBarNo.classList.add("pHouse")
+  infoBarNo.classList.add("list-group-item")
   let infoBarBNo = document.createElement("p");
   infoBarBNo.classList.add("pBlock");
+  infoBarBNo.classList.add("list-group-item");
+  infoBarBNo.classList.add("mb-5");
 
   let textBarN = document.createTextNode(title);
   let textBarR = document.createTextNode(gRoad);
@@ -128,19 +123,9 @@ function geInfoSetter() {
   infoBar.appendChild(infoBarNo);
   infoBar.appendChild(infoBarBNo);
 
+  infoHeader.classList.remove("text-primary");
+  infoHeader.classList.add("text-success");
+  infoHeader.innerHTML ="Address Found";
+
   geInfoSet = true;
 }
-
-searchBtn.addEventListener("click", function() {
-  getAddress();
-});
-
-form.addEventListener("submit", function(e) {
-  e.preventDefault();
-  getAddress();
-});
-
-okayBtn.addEventListener("click", function() {
-  errorMsg.classList.remove("error");
-  errorMsg.classList.add("hidden");
-});

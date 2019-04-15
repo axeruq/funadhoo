@@ -7,11 +7,15 @@ var gRoad, gNo, gBlock;
 var houseIcon = "img/houseMarker.png";
 var userIcon = "img/userMarker.png";
 
+var navbarToggler = document.querySelector("#navbarToggler");
+var togleBtn = document.querySelector("#togleBtn");
+
 function initMap() {
   getLocation();
   map = new google.maps.Map(
       document.getElementById("map"), {zoom: 14,
         center: funadhoo,
+        mapTypeId: 'satellite',
         disableDefaultUI: true});
 }
 
@@ -31,14 +35,6 @@ function showPosition(position) {
 }
 
 function getAddress() {
-
-    if (listArray.length !==0) {
-        for ( let k = 0; k < listArray.length; k++) {
-            list.removeChild(list.childNodes[0]);
-        }
-    }
-
-    listArray = [];
 
   if (geArray.length > 0) {
     geArray[0].setMap(null);
@@ -61,7 +57,7 @@ function getAddress() {
         gNo = geygeList[i].houseNo;
         gBlock = geygeList[i].blockNo;
 
-        geInfoSetter();
+        // geInfoSetter();
 
         geArray.push(marker);
 
@@ -77,48 +73,20 @@ function getAddress() {
 
 
       input.value = "";
+      navbarToggler.classList.remove("show");
+      togleBtn.classList.add("collapsed");
+      togleBtn.setAttribute("aria-expanded", "false");
+      geInfoSetter();
       matchFound = true;
-      form.classList.add("hidden");
-      searchImg.classList.remove("clickPos");
-      searchImg.classList.add("initPos");
-      userPosImg.classList.remove("img-hidden");
-      housePosImg.classList.remove("img-hidden");
-      housePosImg.setAttribute("src", "img/housePosFound.png");
-      searchClicked = false;
+      housePosImg.setAttribute("src", "img/houseActive.png");
+      houseLocationHide = false;
       break;
     } else {
       matchFound = false;
     }
   }
   if (matchFound == false) {
-    errorMsg.classList.remove("hidden");
-    errorMsg.classList.add("error");
+    errorMsgDisplay();
   }
   input.value = "";
 }
-
-input.addEventListener("keydown", function() {
-
-    if (listArray.length !==0) {
-        for ( let k = 0; k < listArray.length; k++) {
-            list.removeChild(list.childNodes[0]);
-        }
-    }
-
-    listArray = [];
-
-    if(input.value.length > 1) {
-         for(let i = 0; i < geygeList.length; i++) {
-            if(geygeList[i].name.toUpperCase().indexOf(input.value.toUpperCase()) > -1) {
-            listArray.push(geygeList[i].name);
-            }
-        }
-    }
-        for(let j = 0; j < listArray.length; j++) {
-            let optionList = document.createElement("option");
-            let optionText = document.createTextNode(listArray[j]);
-            optionList.appendChild(optionText);
-            list.appendChild(optionList);
-    }
-
-});
