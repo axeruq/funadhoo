@@ -32,7 +32,7 @@
   margin-top: 100px;
 }
 
-#userPosImg, #housePosImg {
+#userPosImg, #housePosImg, #mapImg {
   margin-left: 10px;
   cursor: pointer;
 }

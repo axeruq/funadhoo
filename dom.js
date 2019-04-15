@@ -7,10 +7,13 @@ var userPosImg = document.querySelector("#userPosImg");
 var housePosImg = document.querySelector("#housePosImg");
 var infoBar = document.querySelector("#infoBar");
 var infoHeader = document.querySelector("#infoHeader");
+var mapImg = document.querySelector("#mapImg");
+
 
 var houseLocationHide = false;
 var locationHide = false;
 var geInfoSet = false;
+var mapchange = false;
 
 searchBtn.addEventListener("click", function() {
   getAddress();
@@ -129,3 +132,49 @@ function geInfoSetter() {
 
   geInfoSet = true;
 }
+
+mapImg.addEventListener("click", function(){
+  if(mapchange == false) {
+    if(cGe!=="") {
+      map = new google.maps.Map(
+          document.getElementById("map"), {
+            zoom: 18,
+            center: cGe,
+            mapTypeId: 'satellite',
+            disableDefaultUI: true});
+            geArray[0].setMap(map);
+            mapchange = true;
+            mapImg.setAttribute("src", "img/terrain.png");
+    } else {
+      map = new google.maps.Map(
+          document.getElementById("map"), {
+            zoom: 15,
+            center: funadhoo,
+            mapTypeId: 'satellite',
+            disableDefaultUI: true});
+            mapchange = true;
+            mapImg.setAttribute("src", "img/terrain.png");
+    }
+
+  } else {
+    if(cGe!=="") {
+      map = new google.maps.Map(
+          document.getElementById("map"), {
+            zoom: 18,
+            center: cGe,
+            disableDefaultUI: true});
+            geArray[0].setMap(map);
+            mapchange = false;
+            mapImg.setAttribute("src", "img/sattelite.png");
+    } else {
+      map = new google.maps.Map(
+        document.getElementById("map"), {
+        zoom: 15,
+        center: funadhoo,
+        disableDefaultUI: true});
+        mapchange = false;
+        mapImg.setAttribute("src", "img/sattelite.png");
+    }
+  }
+
+});
