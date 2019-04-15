@@ -6,15 +6,16 @@
   .info-bar {
   padding-top: 75px;
   padding-left: 10px;
-  padding-bottom: 0px;
+  padding-bottom: 0;
 
 } }
 
 @media (max-width: 767.98px) {
   .info-bar {
-  padding-top: 0px;
+  margin-top: 0;
+  padding-top: 0;
   padding-left: 10px;
-  padding-bottom: 0px;
+  padding-bottom: 0;
 
 } }
 
