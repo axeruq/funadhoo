@@ -135,7 +135,7 @@ function geInfoSetter() {
 
 mapImg.addEventListener("click", function(){
   if(mapchange == false) {
-    if(cGe!=="") {
+    if(cGe!==[]) {
       map = new google.maps.Map(
           document.getElementById("map"), {
             zoom: 18,
@@ -157,7 +157,7 @@ mapImg.addEventListener("click", function(){
     }
 
   } else {
-    if(cGe!=="") {
+    if(cGe!==[]) {
       map = new google.maps.Map(
           document.getElementById("map"), {
             zoom: 18,
