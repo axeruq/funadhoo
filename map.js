@@ -51,7 +51,7 @@ function getAddress() {
         animation: google.maps.Animation.DROP,
         icon: houseIcon
       });
-
+        geSet = true;
         gRoad = geygeList[i].road;
         gNo = geygeList[i].houseNo;
         gBlock = geygeList[i].blockNo;

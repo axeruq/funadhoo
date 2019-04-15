@@ -14,6 +14,7 @@ var houseLocationHide = false;
 var locationHide = false;
 var geInfoSet = false;
 var mapchange = false;
+var geSet = false;
 
 searchBtn.addEventListener("click", function() {
   getAddress();
@@ -135,7 +136,7 @@ function geInfoSetter() {
 
 mapImg.addEventListener("click", function(){
   if(mapchange == false) {
-    if(cGe!==[]) {
+    if(geSet==true) {
       map = new google.maps.Map(
           document.getElementById("map"), {
             zoom: 18,
@@ -157,7 +158,7 @@ mapImg.addEventListener("click", function(){
     }
 
   } else {
-    if(cGe!==[]) {
+    if(geSet==true) {
       map = new google.maps.Map(
           document.getElementById("map"), {
             zoom: 18,
