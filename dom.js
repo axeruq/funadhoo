@@ -8,6 +8,8 @@ var housePosImg = document.querySelector("#housePosImg");
 var infoBar = document.querySelector("#infoBar");
 var infoHeader = document.querySelector("#infoHeader");
 var mapImg = document.querySelector("#mapImg");
+var tglImg = document.querySelector("#tglImg");
+var infoBody = document.querySelector("#infoBody");
 
 
 var houseLocationHide = false;
@@ -15,6 +17,7 @@ var locationHide = false;
 var geInfoSet = false;
 var mapchange = false;
 var geSet = false;
+var toggled = false;
 
 searchBtn.addEventListener("click", function() {
   getAddress();
@@ -178,4 +181,21 @@ mapImg.addEventListener("click", function(){
     }
   }
 
+});
+
+
+tglImg.addEventListener("click", function() {
+  if(toggled == false) {
+    tglImg.setAttribute("src", "img/toggleDown.png");
+    infoBody.classList.remove("d-none");
+    infoBody.classList.add("fixed-bottom");
+    infoBody.classList.add("d-block");
+    toggled = true;
+  } else {
+    tglImg.setAttribute("src", "img/toggleUp.png");
+    infoBody.classList.add("d-none");
+    infoBody.classList.remove("fixed-bottom");
+    infoBody.classList.remove("d-block");
+    toggled = false;
+  }
 });

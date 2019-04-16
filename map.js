@@ -72,9 +72,6 @@ function getAddress() {
 
 
       input.value = "";
-      navbarToggler.classList.remove("show");
-      togleBtn.classList.add("collapsed");
-      togleBtn.setAttribute("aria-expanded", "false");
       geInfoSetter();
       matchFound = true;
       housePosImg.setAttribute("src", "img/houseActive.png");

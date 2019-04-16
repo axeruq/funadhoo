@@ -66,3 +66,11 @@
   color: #007EA7;
   content: "House NO: ";
 }
+
+.tglUp {
+  margin-bottom: 100px;
+}
+
+#tglImg {
+  cursor: pointer;
+}

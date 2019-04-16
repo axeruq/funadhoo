@@ -17,31 +17,40 @@
         <div class="collapse navbar-collapse" id="navbarToggler">
           <form class="form-inline my-2 my-lg-2" id="form">
             <div class="input-group mb-2 mt-2">
-                <input type="text" id="input" class="form-control" placeholder="Type address here" aria-label="Find" aria-describedby="find" list="gethah">
+                <input type="text" id="input" class="form-control" placeholder="Type the address here" aria-label="Find" aria-describedby="find" list="gethah">
                 <div class="input-group-append">
-                  <button class="btn btn-success" type="button" id="find">Find Address</button>
+                  <button class="btn btn-success" type="button" id="find">Find House</button>
             </div>
             <datalist id="gethah"></datalist>
           </div>
         </form>
-
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <img id="userPosImg" clas="mt-md-2" src="img/location.png" alt="Location" width="25px">
+            <img id="housePosImg" clas="mt-md-2" src="img/house.png" alt="Location" width="25px">
+            <img id="mapImg" src="img/sattelite.png" clas="mt-md-2" alt="Sattelite Img" width="25px">
+        </li>
+      </ul>
     </div>
   </nav>
     <div class="container-fluid">
       <div class="row">
-        <div id="map" class="col-md-9 col-12 mb-2 mb-md-0"></div>
-        <div class="col-md-3 col-12 pt-lg-5 bg-display">
+        <div id="map" class="col-md-6 col-lg-8 col-12 mb-0 mb-md-0"></div>
+        <div id="infoBody" class="col-md-6 col-lg-4 col-12 d-none d-md-block pt-4 pt-lg-5 bg-white">
           <h5 id="infoHeader" class="info-bar text-primary">Search An Address</h5>
           <hr>
             <div id="infoBar" class="bg-light"></div>
+        </div>
+        <div class="d-md-none fixed-bottom text-center">
+            <img id="tglImg" src="img/toggleUp.png" alt="Toggle Up" width="45px">
         </div>
       </div>
     </div>
     <div class="hidden fixed-top" id="errorMsg">
       <div class="container d-flex justify-content-around text-left error-msg">
-        <div class="alert alert-danger border border-danger" role="alert">
+        <div class="alert alert-danger border round shadow-sm" role="alert">
           <div class="text-right">
-            <button class="btn close" id="okay" type="button" name="button">&times;</button>
+            <button class="btn close" id="okay" type="button" name="close">&times;</button>
           </div>
           <h4>SORRY</h4><h5>We Couldn't Locate the House!</h5>
           <hr>
@@ -52,22 +61,8 @@
         </div>
       </div>
     </div>
-    <div class="row fixed-bottom">
-      <div class="col-md-9 col-12"></div>
-      <div class="col-md-3 col-12">
-        <div class="d-flex p-1 pr-3 bg-dark justify-content-end">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <p class="d-inline text-white">&copy;uMnNoor 2019</p>
-              <img id="userPosImg" clas="mt-md-2" src="img/location.png" alt="Location" width="25px">
-              <img id="housePosImg" clas="mt-md-2" src="img/house.png" alt="Location" width="25px">
-              <img id="mapImg" src="img/sattelite.png" clas="mt-md-2" alt="Sattelite Img" width="25px">
-          </li>
-        </ul>
-      </div>
-      </div>
+    <div class="fixed-bottom">
     </div>
-
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpPgb8BzmLFsJ68_hKguQA3uayjk7Ae8I&callback=initMap"></script>
     <script src="map.js"></script>
