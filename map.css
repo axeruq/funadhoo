@@ -5,7 +5,7 @@
 @media (min-width: 768px) {
   .info-bar {
   padding-top: 75px;
-  padding-left: 10px;
+  padding-left: 0px;
   padding-bottom: 0;
 
 } }
@@ -14,9 +14,8 @@
   .info-bar {
   margin-top: 0;
   padding-top: 0;
-  padding-left: 10px;
+  padding-left: 0;
   padding-bottom: 0;
-
 } }
 
 .hidden {
@@ -40,30 +39,30 @@
 
 .pName, .pRoad, .pBlock, .pHouse {
   font-weight: bold;
-  color: #FF6B35;
+  color: #218838;
 }
 
 .pName::before {
   font-weight: normal;
-  color: #007EA7;
+  color: #007bff;
   content: "House Name: ";
 }
 
 .pRoad::before {
   font-weight: normal;
-  color: #007EA7;
+  color: #007bff;
   content: "Road: ";
 }
 
 .pBlock::before {
   font-weight: normal;
-  color: #007EA7;
+  color: #007bff;
   content: "Block NO: ";
 }
 
 .pHouse::before {
   font-weight: normal;
-  color: #007EA7;
+  color: #007bff;
   content: "House NO: ";
 }
 
