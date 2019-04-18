@@ -9,7 +9,7 @@ var userIcon = "img/userMarker.png";
 
 var navbarToggler = document.querySelector("#navbarToggler");
 var togleBtn = document.querySelector("#togleBtn");
-
+var tglediv = document.querySelector("#tglediv");
 function initMap() {
   getLocation();
   map = new google.maps.Map(
@@ -75,6 +75,7 @@ function getAddress() {
       geInfoSetter();
       matchFound = true;
       housePosImg.setAttribute("src", "img/houseActive.png");
+      tglediv.classList.remove("d-none");
       houseLocationHide = false;
       break;
     } else {
